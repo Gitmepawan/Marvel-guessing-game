@@ -49,7 +49,7 @@ if answer.lower()=='yes':
         print('Wrong Answer :(')
  
  
-print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
+print('Thankyou for Playing this small guessing game, you attempted',score,"questions correctly!")
 
 
 print(design.quit)
