@@ -1,87 +1,57 @@
-import os
+
+from tkinter import image_names
 from gameComponents import design, gameQuestions 
-
-
-def start_game(): # new game first
-    guesses = []
-    question_num = -1
-    correct_guess = 0
-   
-    
-    for key in gameQuestions.questions:
-    
-        print(design.marvellogo)
-        print(design.welcome)
-        print(key)
-        for t in gameQuestions.options[question_num+1]:
-            print(t)
-        guess = input("please Enter A or B or C or D:::::")
-        guess = guess.upper()
-        guesses.append(guess)
-        correct_guess = game_answer(gameQuestions.questions.get(key), guess)
-        question_num = 1
-
-    display_score(correct_guess, guesses)
-
-    
-    
-# answer correct or not
-def game_answer(answer, guess):
-
-    if answer == guess:
-        
-       
-        if answer == "A":
-            filename = "Documents/img_ir.jpg"
-            image = image.open("image2")
-            image.open()
-      
-            return 1
-        elif answer == "B":
-            image = image.open("image3")
-            image.open()
-            return 1
-        elif answer == "D":
-            image = image.open("image4")
-            image.open()
-            return 1
-        else :
-            image = image.open("image5")
-            image.open()
-            return 1   
-    else: 
-        
-                        return 0
-     
-# this function will show the scores
-def display_score(correct_answers, guesses):
-   
-    print(design.marvellogo)
-    print(design.welcome)
-    print(design.quit)
-    print("                          correct answers ", end="")       
-    for t in gameQuestions.questions:
-        print(gameQuestions.questions.get(t), end=" ")
-    print()
-
-    print("                           Your guesses ",  end="")
-    for t in guesses:
-        print(t, end=" ")
-    print()
-   
-
-# function to ask to play again?
-def new_game():
-    response = input("Press (Y) to play again, Any key to quit\n")
-    response = response.upper()
-    if response == "Y":
-        return True
-    else:
-        return False
-start_game()
-
-while new_game(): # new game function
-   start_game()
 print(design.marvellogo)
 print(design.welcome)
+answer=input('Are you ready ? (y/n) :')
+score=0
+total_questions=4
+ 
+def start_game(): # new game first
+    guess = []
+    question_num = -1
+    correct_guess = 0
+    
+   
+if answer.lower()=='yes':
+    answer=input('Question 1: "Who Breaks the Fourth Wall?"')
+    if answer.lower()=='Deadpool':
+        score += 1
+        
+        
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+        
+ 
+ 
+    answer=input('Question 2: "who can do Supersonic flights? " ')
+    if answer.lower()=='B':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+            
+ 
+    answer=input('Question 3: "which marvel character has stretchy pants?"')
+    if answer.lower()=='C':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+       
+        answer=input('Question 2: "WHich is character created by Stan Lee and Steve Ditko?"')
+    if answer.lower()=='C':
+        score += 1
+        print('correct')
+    
+    else:
+        print('Wrong Answer :(')
+ 
+ 
+print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
+
+
 print(design.quit)
+mark=(score/total_questions)*100
+print('Marks obtained:',mark)
