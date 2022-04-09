@@ -9,13 +9,16 @@ total_questions=4
  
 def start_game(): # new game first
     guess = []
-    question_num = -1
+    play_n = 4
     correct_guess = 0
-    
-   
-if answer.lower()=='yes':
-    answer=input('Question 1: "Who Breaks the Fourth Wall?"')
-    if answer.lower()=='Deadpool':
+    for t in gameQuestions.answers[play_n-1]:
+            print(t)
+        guess = input("Enter (A or B or C or or D----------------): ")
+        guess = guess.lower()
+
+
+
+    if answer.lower()=='A':
         score += 1
         
         
@@ -25,7 +28,7 @@ if answer.lower()=='yes':
         
  
  
-    answer=input('Question 2: "who can do Supersonic flights? " ')
+    
     if answer.lower()=='B':
         score += 1
         print('correct')
@@ -33,14 +36,14 @@ if answer.lower()=='yes':
         print('Wrong Answer :(')
             
  
-    answer=input('Question 3: "which marvel character has stretchy pants?"')
+    
     if answer.lower()=='C':
         score += 1
         print('correct')
     else:
         print('Wrong Answer :(')
        
-        answer=input('Question 2: "WHich is character created by Stan Lee and Steve Ditko?"')
+        
     if answer.lower()=='C':
         score += 1
         print('correct')
@@ -48,10 +51,12 @@ if answer.lower()=='yes':
     else:
         print('Wrong Answer :(')
  
- 
-print('Thankyou for Playing this small guessing game, you attempted',score,"questions correctly!")
+  
+  
+  
+  def calc_score(): # new game first
+      mark=(score/total_questions)*100
 
-
-print(design.quit)
+print(design.quit, flush=False)
 mark=(score/total_questions)*100
 print('Marks obtained:',mark)
